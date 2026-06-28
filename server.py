@@ -11,6 +11,7 @@ fastmcp = FastMCP(
     port=int(os.getenv("PORT", "8000")),
     streamable_http_path="/",
     json_response=True,
+    stateless_http=True,
 )
 
 
