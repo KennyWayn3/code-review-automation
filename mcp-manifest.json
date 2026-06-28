@@ -1,0 +1,25 @@
+{
+  "name": "code-review-automation",
+  "description": "MCP server for automated code review using AI agents",
+  "tools": [
+    {
+      "name": "example_tool",
+      "description": "Example",
+      "parameters": [
+        {
+          "name": "input",
+          "type": "str",
+          "description": "Input"
+        }
+      ]
+    }
+  ],
+  "install_command": "uvx code-review-automation",
+  "pip_install": "code-review-automation",
+  "keywords": [
+    "mcp",
+    "code-review",
+    "crewai"
+  ],
+  "price_usd": 49
+}
