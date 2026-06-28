@@ -1,30 +1,49 @@
 # code-review-automation - MCP Server
 
-MCP server for automated code review using AI agents
+MCP server for automated code review using AI agents. Analyze code diffs for bugs, security issues, and style violations, or run static analysis on file paths.
 
-## Installation
+## Tools
 
-### pip
+### `review_code`
+Analyze a code diff or file content for bugs, security issues, and style violations.
+- **`diff`** (string, required): The code diff or file content to review
+
+### `check_quality`
+Run static analysis checks on a file path.
+- **`path`** (string, required): File path to analyze
+
+## Quick Start (local)
+
 ```bash
-pip install code-review-automation
+pip install -r requirements.txt
+export MCP_BILLING_API=https://mcp-billing-api.onrender.com
+uvicorn server:starlette_app --host 0.0.0.0 --port 8000
 ```
 
-### uvx (recommended)
-```bash
-uvx code-review-automation
-```
+## Usage with Claude Desktop / MCP clients
 
-## Usage
-
-Add to your Claude Desktop config:
 ```json
-{"mcpServers": {"code-review-automation": {"command": "uvx", "args": ["code-review-automation"]}}}
+{
+  "mcpServers": {
+    "code-review-automation": {
+      "url": "https://mcp-code-review.onrender.com/"
+    }
+  }
+}
 ```
 
-## Available Tools
-- **example_tool**: Example
+## Deployed endpoint
+
+`https://mcp-code-review.onrender.com/` — Streamable HTTP transport at root path. Health check at `/health`.
+
+## Environment Variables
+
+| Variable | Required | Description |
+|---|---|---|
+| `MCP_BILLING_API` | Yes | Billing API endpoint |
+| `MCP_LICENSE_KEY` | Yes | License key for billing |
+| `AGENTICMARKET_SECRET` | No | Secret for AgenticMarket authentication |
 
 ## License
-MIT
 
-[![PyPI](https://img.shields.io/pypi/v/code-review-automation)](https://pypi.org/project/code-review-automation/) [![GitHub](https://img.shields.io/github/stars/KennyWayn3/code-review-automation)](https://github.com/KennyWayn3/code-review-automation)
+MIT
