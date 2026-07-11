@@ -47,3 +47,5 @@ uvicorn server:starlette_app --host 0.0.0.0 --port 8000
 ## License
 
 MIT
+
+[![PyPI](https://img.shields.io/pypi/v/code-review-automation)](https://pypi.org/project/code-review-automation/) [![GitHub](https://img.shields.io/github/stars/KennyWayn3/code-review-automation)](https://github.com/KennyWayn3/code-review-automation)
